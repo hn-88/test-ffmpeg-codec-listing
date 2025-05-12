@@ -41,10 +41,10 @@ jobs:
         7z x opencv-4.11.0-windows.exe
         cd ..
 
-    - name: Install ffmpeg with choco and pkg-config with vcpkg
+    - name: Install ffmpeg with choco and pkg-config with vcpkg or choco
       run: |
         choco install ffmpeg-shared
-        vcpkg install pkgconf
+        choco install pkgconflite
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
