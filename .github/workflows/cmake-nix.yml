@@ -40,6 +40,7 @@ jobs:
       # But instead using linuxdeployqt as in https://github.com/hn-88/OCVWarp/blob/master/.travis.yml
       run: |
         echo "create appimage"
+        sudo apt-get install libfuse2 -y
         mkdir -p appdir/usr/bin ; strip OCVWarp ; cp OCVWarp ./appdir/usr/bin/OCVWarp.bin
         mkdir -p appdir/usr/share/applications ; cp ../appdir/OCVWarp.desktop ./appdir/usr/share/applications/
         mkdir -p appdir/usr/share/icons/hicolor/256x256/apps ; cp ../appdir/OCVWarp.png ./appdir/usr/share/icons/hicolor/256x256/apps/
