@@ -10,7 +10,7 @@ env:
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
   BUILD_CONFIGURATION: Release
-  OpenCV_DIR: D:\a\OCVWarp\OCVWarp\OpenCV\opencv\build\x64\vc16\lib
+  OpenCV_DIR: D:\a\test-ffmpeg-codec-listing\test-ffmpeg-codec-listing\OpenCV\opencv\build\x64\vc16\lib
 
 permissions:
   contents: read
