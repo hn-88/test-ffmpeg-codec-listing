@@ -43,7 +43,7 @@ jobs:
 
     - name: Install ffmpeg with choco
       run: |
-        choco install ffmpeg-full
+        choco install ffmpeg-shared
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
