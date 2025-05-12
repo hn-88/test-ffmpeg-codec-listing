@@ -44,7 +44,7 @@ jobs:
     - name: Install ffmpeg with choco and pkg-config with vcpkg or choco
       run: |
         choco install ffmpeg-shared
-        choco install pkgconflite
+        choco install pkgconfiglite
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
