@@ -14,6 +14,7 @@ include_directories(${FFMPEG_INCLUDE_DIRS})
 link_directories(${FFMPEG_LIBRARY_DIRS})
 add_definitions(${FFMPEG_CFLAGS_OTHER})
 
+add_executable(OCVWarp OCVWarp.cpp)
 target_link_libraries(OCVWarp ${FFMPEG_LIBRARIES})
 
 # #include_directories(~/OpenCVLocal/include/opencv4)
