@@ -8,7 +8,7 @@ extern "C" {
 
 void listSupportedCodecs() {
     // Initialize FFMPEG
-    avcodec_register_all();
+    // avcodec_register_all(); // deprecated since ffmpeg v4 in 2018
 
     std::cout << "Supported Codecs:" << std::endl;
 
