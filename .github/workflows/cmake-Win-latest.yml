@@ -11,6 +11,7 @@ env:
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
   BUILD_CONFIGURATION: Release
   OpenCV_DIR: D:\a\test-ffmpeg-codec-listing\test-ffmpeg-codec-listing\OpenCV\opencv\build\x64\vc16\lib
+  PKG_CONFIG_PATH: D:\a\test-ffmpeg-codec-listing\test-ffmpeg-codec-listing\ffmpeg-master-latest-win64-gpl-shared\lib\pkgconfig
 
 permissions:
   contents: read
@@ -41,10 +42,14 @@ jobs:
         7z x opencv-4.11.0-windows.exe
         cd ..
 
-    - name: Install ffmpeg with choco and pkg-config with vcpkg or choco
+    - name: Install ffmpeg and pkg-config with choco
       run: |
-        choco install ffmpeg-shared
+        # choco install ffmpeg-shared # this does not have the pc files required by pkgconfig
         choco install pkgconfiglite
+        echo "Downloading ffmpeg latest..."
+        powershell -c "Invoke-WebRequest -Uri 'https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl-shared.zip' -OutFile 'ffmpeg-master-latest-win64-gpl-shared.zip'" 
+        echo "Download complete. Extracting ... "
+        7z x ffmpeg-master-latest-win64-gpl-shared.zip
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
